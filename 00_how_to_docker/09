@@ -1,0 +1,23 @@
+# On the Host
+docker pull debian
+docker run -it --rm debian /bin/sh
+
+# On the container
+apt update && apt upgrade
+apt install gcc nano git
+
+git clone https://github.com/tpompon/docker-1.git
+
+git config --global user.email "debian@docker"
+git config --global user.name "Debian from Docker"
+
+git commit -m "code.c from docker container (Debian)" && git push
+
+# code.c
+#
+# #include <stdio.h>
+#
+# int	main(void)
+# {
+# 	printf("Hello Docker!");
+# }
