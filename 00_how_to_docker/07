@@ -1,3 +1,4 @@
 docker inspect -f "{{ .NetworkSettings.IPAddress }}" overlord
 
 # Util: docker inspect [container]
+# -f: format
