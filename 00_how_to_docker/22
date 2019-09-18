@@ -1,3 +1,4 @@
 docker swarm join --token SWMTKN-1-0y0vc5evx5k3dfu0p2cj2s918z4vgm4zar852n2li624z745su-47ej614wsamwbahyzwuv1plv3 192.168.99.100:2377
 
 # Command can be obtained with `docker swarm join-token worker`
+# To take control of Aiur: `eval $(docker-machine env Aiur)`
