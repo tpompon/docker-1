@@ -1,0 +1,5 @@
+docker service scale marines=20
+
+# docker service ls
+# docker service ps marines
+# docker service logs --follow marines
