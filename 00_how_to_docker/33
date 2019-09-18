@@ -1,0 +1,4 @@
+docker rmi -f $(docker images --quiet)
+
+# docker images
+# Documentation: https://docs.docker.com/engine/reference/commandline/rmi/
