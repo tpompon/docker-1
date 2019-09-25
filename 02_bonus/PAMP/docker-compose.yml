@@ -1,30 +1,29 @@
-version: '2'
+version: '3.1'
 
 services:
-    web:
-        image: php:7.2-apache
-        restart: always
-        ports:
-            - 80:80
-        volumes:
-            - ~/docker/www:/var/www/html
-        links:
-            - db:db
-    db:
-        image: mariadb
-        restart: always
-        volumes:
-            - ~/docker/mysql:/var/lib/mysql
-        ports:
-            - 3306:3306
-        environment:
-            - MYSQL_ROOT_PASSWORD=root
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        restart: always
-        ports:
-            - 8080:80
-        links:
-            - db:db
 
-# docker-compose up
+  web:
+    image: php:5.6-apache
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ~/docker/www:/var/www/html
+    links:
+        - db:db
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+        - ~/docker/mysql:/var/lib/mysql
+    links:
+        - db:db
+
+  db:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: p@ssw0rd
